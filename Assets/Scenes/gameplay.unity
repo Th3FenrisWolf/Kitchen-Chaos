@@ -2296,12 +2296,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
-      propertyPath: m_Name
-      value: Work Table, upstand, 1 bowl, 1800mm
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
     - target: {fileID: -6833110119344768584, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -3141,32 +3135,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
-      propertyPath: m_Name
-      value: Work Table, upstand, 1 bowl, 1800mm (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
---- !u!1001 &505167673
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1678702324}
-    m_Modifications:
-    - target: {fileID: 1968476592218994, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
-      propertyPath: m_Name
-      value: MaleFree1 (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889916270699016, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889916270699016, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 12.70159
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889916270699016, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
     - target: {fileID: -6833110119344768584, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -3609,8 +3577,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
   m_PrefabInstance: {fileID: 523615536}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &540833612 stripped
-Transform:
 --- !u!1 &540176256
 GameObject:
   m_ObjectHideFlags: 0
@@ -6294,44 +6260,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
-      propertyPath: m_Name
-      value: Work Table, upstand, 1 bowl, 1800mm (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
---- !u!4 &1141017332 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
-  m_PrefabInstance: {fileID: 1141017331}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1148415195 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 53bc36e4a0a63ff4aa402c31f8846fc6, type: 3}
-  m_PrefabInstance: {fileID: 1822156813}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1172768483
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1678702324}
-    m_Modifications:
-    - target: {fileID: 1968476592218994, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
-      propertyPath: m_Name
-      value: MaleFree1 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889916270699016, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889916270699016, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 12.70159
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889916270699016, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 12.70159
     - target: {fileID: -6833110119344768584, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -8082,14 +8010,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fan
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f14d1ac6dacfc0242bed295f91ed3591, type: 3}
---- !u!4 &1497334507 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 457400319623887762, guid: f14d1ac6dacfc0242bed295f91ed3591, type: 3}
-  m_PrefabInstance: {fileID: 1497334506}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1501950615
     - target: {fileID: 942047845792653608, guid: f14d1ac6dacfc0242bed295f91ed3591, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -9450,15 +9370,6 @@ Transform:
   - {fileID: 307952451}
   - {fileID: 232866807}
   - {fileID: 701743521}
-  - {fileID: 2021089168}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1683427764 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6302805d62f8dd342b838069473e15a6, type: 3}
-  m_PrefabInstance: {fileID: 170999664}
-  m_PrefabAsset: {fileID: 0}
   - {fileID: 2020689165}
   m_Father: {fileID: 0}
   m_RootOrder: 2
