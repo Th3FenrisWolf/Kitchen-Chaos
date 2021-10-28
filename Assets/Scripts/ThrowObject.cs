@@ -70,7 +70,7 @@ public class ThrowObject : MonoBehaviour
 
     void OnTriggerEnter() {
         if (beingCarried) {
-            touched = false;
+            touched = true;
         }
     }
 }
