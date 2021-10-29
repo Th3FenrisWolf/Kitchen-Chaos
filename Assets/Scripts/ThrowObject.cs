@@ -20,6 +20,12 @@ public class ThrowObject : MonoBehaviour
         audio = GetComponent<AudioSource>();    
     }
 
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.name.Equals("cat")) {
+            collision.gameObject.GetComponentInParent<navigation>().Stun();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

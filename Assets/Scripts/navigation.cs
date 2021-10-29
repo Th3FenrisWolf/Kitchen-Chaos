@@ -12,6 +12,7 @@ public class navigation : MonoBehaviour
     NavMeshAgent agent;
     private int index = 0;
     private Animator anim;
+    private bool isStunned = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +27,27 @@ public class navigation : MonoBehaviour
         // reload scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
+    IEnumerator timedTurnOffStun() {
+        yield return new WaitForSeconds(3);
+
+        isStunned = false;
+        anim.SetTrigger("walk");
+    }
+
+    public void Stun() {
+        isStunned = true;
+        anim.SetTrigger("stun");
+        StartCoroutine(timedTurnOffStun());
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (isStunned) {
+            agent.SetDestination(transform.position);
+            return;
+        }
+
         // player dead
         if (Vector3.Distance(agentTrans.position, target.position) < 2) {
             agent.isStopped = true;
