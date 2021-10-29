@@ -40,6 +40,8 @@ public class navigation : MonoBehaviour
             anim.SetTrigger("eat");
 
             // lock the player movement
+            target.GetComponent<ThirdPersonMovement>().isEnabled = false;
+
             StartCoroutine(ReloadScene());
         }
 

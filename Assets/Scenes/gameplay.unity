@@ -1385,7 +1385,7 @@ MonoBehaviour:
   player: {fileID: 1925824188}
   playerCam: {fileID: 1379807312}
   pickupDistanceRange: 2
-  throwForce: 500
+  throwForce: 250
   soundToPlay: []
   touched: 0
 --- !u!65 &211035221
@@ -4754,7 +4754,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764030281}
-  m_LocalRotation: {x: 0.0000000015350228, y: 0.98395354, z: -0.1784248, w: 0.000000008465139}
+  m_LocalRotation: {x: -0.0000000015350228, y: 0.98395354, z: -0.1784248, w: -0.000000008465139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10393,7 +10393,6 @@ GameObject:
   - component: {fileID: 1925824188}
   - component: {fileID: 1925824187}
   - component: {fileID: 1925824186}
-  - component: {fileID: 1925824189}
   m_Layer: 0
   m_Name: Main Character
   m_TagString: Player
@@ -10459,18 +10458,6 @@ Transform:
   m_Father: {fileID: 1657284850}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1925824189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925824185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d25811eebbc8034da4d81dff093cdcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1934794255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 53bc36e4a0a63ff4aa402c31f8846fc6, type: 3}

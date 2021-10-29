@@ -14,6 +14,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float groundDistance = 0.1f;
     private Vector3 velocity;
     private bool isGrounded;
+    public bool isEnabled = true;
 
     public float speed = 4f;
     public float jump = 1.3f;
@@ -23,6 +24,10 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isEnabled) {
+            return;
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
