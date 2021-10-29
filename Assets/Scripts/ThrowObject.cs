@@ -27,6 +27,7 @@ public class ThrowObject : MonoBehaviour
         hasPlayer = (distanceFromPlayer <= 2.5f);
 
         if (hasPlayer && Input.GetKey(KeyCode.E)) {
+            transform.position += new Vector3(0f, 0.1f, 0f);
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
             beingCarried = true;
