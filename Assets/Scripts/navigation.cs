@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class navigation : MonoBehaviour
@@ -13,6 +14,8 @@ public class navigation : MonoBehaviour
     private int index = 0;
     private Animator anim;
     private bool isStunned = false;
+    private int chaosStunValue = 50;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,10 @@ public class navigation : MonoBehaviour
     }
 
     public void Stun() {
+        // update score
+        float value = int.Parse(scoreText.text.Split(':')[1]);
+        scoreText.text = string.Format("Chaos Score: {0}", value + chaosStunValue);
+
         isStunned = true;
         anim.SetTrigger("stun");
         StartCoroutine(timedTurnOffStun());
