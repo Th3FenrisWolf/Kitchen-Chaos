@@ -13,6 +13,7 @@ public class ThrowObject : MonoBehaviour
     public AudioClip[] soundToPlay;
     private AudioSource audio;
     public bool touched = false;
+    public float minStunVelocity = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class ThrowObject : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.name.Equals("cat")) {
+        if (collision.gameObject.name.Equals("cat") && gameObject.GetComponent<Rigidbody>().velocity.magnitude >= minStunVelocity) {
             collision.gameObject.GetComponentInParent<navigation>().Stun();
         }
     }
