@@ -17,6 +17,7 @@ public class navigation : MonoBehaviour
     private int chaosStunValue = 50;
     public Text scoreText;
     public GameObject deadText;
+    public GameObject stopwatch;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,8 @@ public class navigation : MonoBehaviour
         deadText.SetActive(true);
 
         deadText.transform.parent.GetComponent<Image>().color = new Color(0, 0, 0, 0.8f);
+
+        stopwatch.GetComponent<StopWatch>().StopTimer();
     }
     IEnumerator timedTurnOffStun() {
         yield return new WaitForSeconds(3);

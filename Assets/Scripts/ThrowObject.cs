@@ -13,12 +13,12 @@ public class ThrowObject : MonoBehaviour
     public AudioClip[] soundToPlay;
     private AudioSource audio;
     public bool touched = false;
-    public float minStunVelocity = 2f;
+    public float minStunVelocity = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();    
+        audio = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision) {
