@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CreateChaos : MonoBehaviour
 {
+	public GameObject actionText;
 	public Text scoreText;
 	public bool nearChaos = false;
 	public bool chaosActive = false;
@@ -21,6 +22,15 @@ public class CreateChaos : MonoBehaviour
 	}
 	void Update()
 	{
+
+		if (nearChaos && !chaosActive && !actionText.activeSelf) {
+			actionText.SetActive(true);
+        }
+
+		if ((!nearChaos || chaosActive) && actionText.activeSelf) {
+			actionText.SetActive(false);
+        }
+
 		if (Input.GetKeyDown("e") && nearChaos && !chaosActive)
 		{
 			chaosActive = true;
