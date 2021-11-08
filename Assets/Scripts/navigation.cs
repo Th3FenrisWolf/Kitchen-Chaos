@@ -16,6 +16,7 @@ public class navigation : MonoBehaviour
     private bool isStunned = false;
     private int chaosStunValue = 50;
     public Text scoreText;
+    public GameObject deadText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,12 @@ public class navigation : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    IEnumerator ReloadScene() {
+    IEnumerator HandleDead() {
         yield return new WaitForSeconds(2);
 
-        // reload scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        deadText.SetActive(true);
+
+        deadText.transform.parent.GetComponent<Image>().color = new Color(0, 0, 0, 0.8f);
     }
     IEnumerator timedTurnOffStun() {
         yield return new WaitForSeconds(3);
@@ -50,24 +52,36 @@ public class navigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (deadText.activeSelf) {
+            if (Input.GetKey(KeyCode.E)) {
+                // reload scene
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            }
+
+            if (Input.GetKey(KeyCode.Escape)) {
+                // go to the main screen
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
+            }
+        }
+
         if (isStunned) {
             agent.SetDestination(transform.position);
             return;
         }
 
-        // player dead
+        // transition player to dead state
         if (Vector3.Distance(agentTrans.position, target.position) < 2) {
             agent.isStopped = true;
             agent.velocity = Vector3.zero;
             agent.ResetPath();
 
-            // TODO play eat animation and show death/respawn option on screen
             anim.SetTrigger("eat");
 
             // lock the player movement
             target.GetComponent<ThirdPersonMovement>().isEnabled = false;
 
-            StartCoroutine(ReloadScene());
+            // wait then show dead screen
+            StartCoroutine(HandleDead());
         }
 
 
