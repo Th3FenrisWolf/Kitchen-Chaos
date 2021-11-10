@@ -13,7 +13,7 @@ public class ThrowObject : MonoBehaviour
     public AudioClip[] soundToPlay;
     private AudioSource audio;
     public bool touched = false;
-    public float minStunVelocity = 1f;
+    public float minStunVelocity = 0.5f;
 
     // Start is called before the first frame update
     void Start()
