@@ -17,7 +17,9 @@ public class navigation : MonoBehaviour
     private int chaosStunValue = 50;
     public Text scoreText;
     public GameObject deadText;
+    public GameObject pauseText;
     public GameObject stopwatch;
+    bool paused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +54,14 @@ public class navigation : MonoBehaviour
         StartCoroutine(timedTurnOffStun());
     }
 
+    void PauseGame() {
+        Time.timeScale = 0;
+    }
+
+    void ResumeGame() {
+        Time.timeScale = 1;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -64,6 +74,20 @@ public class navigation : MonoBehaviour
             if (Input.GetKey(KeyCode.Escape)) {
                 // go to the main screen
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
+            }
+        } else {
+            // while game playing
+
+            if (Input.GetKeyDown(KeyCode.Return) & paused) {
+                paused = false;
+                ResumeGame();
+                pauseText.SetActive(false);
+                pauseText.transform.parent.GetComponent<Image>().color = new Color(0, 0, 0, 0.0f);
+            } else if (Input.GetKeyDown(KeyCode.Escape) && !paused) {
+                paused = true;
+                PauseGame();
+                pauseText.SetActive(true);
+                pauseText.transform.parent.GetComponent<Image>().color = new Color(0, 0, 0, 0.8f);
             }
         }
 
