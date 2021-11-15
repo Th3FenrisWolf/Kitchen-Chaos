@@ -78,11 +78,17 @@ public class navigation : MonoBehaviour
         } else {
             // while game playing
 
-            if (Input.GetKeyDown(KeyCode.Return) & paused) {
+            if (Input.GetKeyDown(KeyCode.Return) && paused) {
                 paused = false;
                 ResumeGame();
                 pauseText.SetActive(false);
                 pauseText.transform.parent.GetComponent<Image>().color = new Color(0, 0, 0, 0.0f);
+            } else if (Input.GetKeyDown(KeyCode.R) && paused) {
+                // reload scene
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            } else if (Input.GetKeyDown(KeyCode.M) && paused) {
+                // go to the main screen
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
             } else if (Input.GetKeyDown(KeyCode.Escape) && !paused) {
                 paused = true;
                 PauseGame();
