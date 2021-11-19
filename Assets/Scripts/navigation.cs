@@ -48,6 +48,7 @@ public class navigation : MonoBehaviour
         // update score
         float value = int.Parse(scoreText.text.Split(':')[1]);
         scoreText.text = string.Format("Chaos Score: {0}", value + chaosStunValue);
+        gameObject.GetComponent<AudioSource>().Play();
 
         isStunned = true;
         anim.SetTrigger("stun");

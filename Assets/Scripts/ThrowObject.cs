@@ -26,10 +26,11 @@ public class ThrowObject : MonoBehaviour
             collision.gameObject.GetComponentInParent<navigation>().Stun();
         }
 
-        if (audio != null && gameObject.GetComponent<Rigidbody>().velocity.magnitude >= 0.1f) {
+        if (audio != null && gameObject.GetComponent<Rigidbody>().velocity.magnitude >= 0.5f) {
+            Debug.Log(gameObject.name);
+            Debug.Log(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
             audio.PlayOneShot(audio.clip);
             audio.volume = 0.1f / Vector3.Distance(gameObject.transform.position, collision.transform.position) + 0.3f;
-            Debug.Log(gameObject.name);
         }
     }
 
