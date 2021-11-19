@@ -14,6 +14,7 @@ public class ThrowObject : MonoBehaviour
     private AudioSource audio;
     public bool touched = false;
     public float minStunVelocity = 0.5f;
+    [SerializeField] ParticleSystem hitParticle = null;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,11 @@ public class ThrowObject : MonoBehaviour
             Debug.Log(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
             audio.PlayOneShot(audio.clip);
             audio.volume = 0.1f / Vector3.Distance(gameObject.transform.position, collision.transform.position) + 0.3f;
+            if (hitParticle != null)
+            {
+                hitParticle.transform.position = gameObject.transform.position;
+                hitParticle.Play();
+            }
         }
     }
 
