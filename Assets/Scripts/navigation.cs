@@ -118,8 +118,7 @@ public class navigation : MonoBehaviour
             StartCoroutine(HandleDead());
         }
 
-
-        if (Vector3.Distance(agentTrans.position, target.position) >= 2 && Vector3.Distance(agentTrans.position, target.position) <= 15)
+        if (Vector3.Distance(agentTrans.position, target.position) >= 2 && Vector3.Distance(agentTrans.position, target.position) <= 15 && target.position.y < 2)
         {
             agent.SetDestination(target.position);
         }
