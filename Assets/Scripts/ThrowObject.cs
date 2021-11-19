@@ -18,12 +18,18 @@ public class ThrowObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audio =  GameObject.Find("Main Character").GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.name.Equals("cat") && gameObject.GetComponent<Rigidbody>().velocity.magnitude >= minStunVelocity) {
             collision.gameObject.GetComponentInParent<navigation>().Stun();
+        }
+
+        if (audio != null && gameObject.GetComponent<Rigidbody>().velocity.magnitude >= 0.1f) {
+            audio.PlayOneShot(audio.clip);
+            audio.volume = 0.1f / Vector3.Distance(gameObject.transform.position, collision.transform.position) + 0.3f;
+            Debug.Log(gameObject.name);
         }
     }
 
