@@ -10,6 +10,9 @@ public class LightSwitch : MonoBehaviour
 	public bool nearLight = false;
 	public bool lightOn = true;
 	public GameObject light;
+	public AudioClip switchOn;
+	public AudioClip switchOff;
+	private AudioSource audioSource;
 
     private void OnTriggerEnter(Collider other)
 	{
@@ -19,19 +22,27 @@ public class LightSwitch : MonoBehaviour
 	{
 		nearLight = false;
 	}
-	void Update()
+
+    private void Start() {
+		audioSource = gameObject.GetComponent<AudioSource>();
+
+	}
+
+    void Update()
 	{
 		if (Input.GetKeyDown("e") && nearLight)
 		{
 			if (lightOn)
 			{
 				lightOn = false;
-				Debug.Log("Switch has been turned off");
+				audioSource.clip = switchOff;
+				audioSource.Play();
 			}
 			else
 			{
 				lightOn = true;
-				Debug.Log("Switch has been turned on");
+				audioSource.clip = switchOn;
+				audioSource.Play();
 			}
 
 			// update score
