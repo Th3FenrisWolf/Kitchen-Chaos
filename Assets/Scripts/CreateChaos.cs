@@ -36,6 +36,7 @@ public class CreateChaos : MonoBehaviour
 			chaosActive = true;
 			Debug.Log("Fire Started");
 			Chaos.SetActive(chaosActive);
+			gameObject.GetComponent<AudioSource>().Play();
 
 			// update score
 			float value = int.Parse(scoreText.text.Split(':')[1]);
