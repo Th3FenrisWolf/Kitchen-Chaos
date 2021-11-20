@@ -2363,7 +2363,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96250c209e8bfbd4b8f2ee88743dc699, type: 3}
       propertyPath: m_LocalScale.x
@@ -6135,7 +6135,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764030281}
-  m_LocalRotation: {x: -0.0021282164, y: 0.99184036, z: -0.1263694, w: -0.01670382}
+  m_LocalRotation: {x: -0.0021282216, y: 0.99184036, z: -0.12636939, w: -0.016703859}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6179,7 +6179,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.9352678, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6814,7 +6814,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864521127}
-  m_LocalRotation: {x: -0.00096194935, y: 0.9982254, z: -0.057118688, w: -0.016811348}
+  m_LocalRotation: {x: -0.0009619514, y: 0.9982254, z: -0.057118688, w: -0.016811386}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6858,7 +6858,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.9352678, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10128,7 +10128,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379807309}
-  m_LocalRotation: {x: -0.0015431837, y: 0.99565065, z: -0.09163119, w: -0.016768016}
+  m_LocalRotation: {x: -0.0015431839, y: 0.99565065, z: -0.09163119, w: -0.016768016}
   m_LocalPosition: {x: -4.5353355, y: -3.8726504, z: 13.104811}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -11891,7 +11891,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.9352678, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12137,7 +12137,11 @@ MonoBehaviour:
   chaosValue: 10
   nearLight: 0
   lightOn: 1
-  light: {fileID: 1268339035}
+  lights:
+  - {fileID: 1268339035}
+  - {fileID: 1478535468}
+  - {fileID: 548136626}
+  - {fileID: 1335490151}
   switchOn: {fileID: 8300000, guid: 0784b7071d50a3248bec2fdde66ba6b4, type: 3}
   switchOff: {fileID: 8300000, guid: 089808bb3a2f4884d8e7894435f75dd3, type: 3}
 --- !u!4 &1716531479 stripped
@@ -26952,7 +26956,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.9352678, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

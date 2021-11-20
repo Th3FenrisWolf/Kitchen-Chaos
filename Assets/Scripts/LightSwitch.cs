@@ -9,7 +9,7 @@ public class LightSwitch : MonoBehaviour
 	public int chaosValue = 10;
 	public bool nearLight = false;
 	public bool lightOn = true;
-	public GameObject light;
+	public GameObject[] lights;
 	public AudioClip switchOn;
 	public AudioClip switchOff;
 	private AudioSource audioSource;
@@ -49,7 +49,9 @@ public class LightSwitch : MonoBehaviour
 			float value = int.Parse(scoreText.text.Split(':')[1]);
 			scoreText.text = string.Format("Chaos Score: {0}", value + chaosValue);
 
-			light.SetActive(lightOn);
+			foreach (GameObject light in lights) {
+				light.SetActive(lightOn);
+			}
 		}
 	}
 }
