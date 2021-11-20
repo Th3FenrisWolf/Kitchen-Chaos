@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ThrowObject : MonoBehaviour
@@ -15,11 +16,18 @@ public class ThrowObject : MonoBehaviour
     public bool touched = false;
     public float minStunVelocity = 0.5f;
     [SerializeField] ParticleSystem hitParticle = null;
+    private ParticleSystem tempParticle = null;
 
     // Start is called before the first frame update
     void Start()
     {
         audio =  GameObject.Find("Main Character").GetComponent<AudioSource>();
+
+        if (gameObject.name.Contains("Carrot")) {
+            hitParticle = GameObject.Find("CarrotHit").GetComponent<ParticleSystem>();
+        } else if (gameObject.name.Contains("Lemon")) {
+            hitParticle = GameObject.Find("LemonHit").GetComponent<ParticleSystem>();
+        }
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -32,10 +40,12 @@ public class ThrowObject : MonoBehaviour
             Debug.Log(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
             audio.PlayOneShot(audio.clip);
             audio.volume = 0.1f / Vector3.Distance(gameObject.transform.position, collision.transform.position) + 0.3f;
-            if (hitParticle != null)
-            {
-                hitParticle.transform.position = gameObject.transform.position;
-                hitParticle.Play();
+            if (hitParticle != null) {
+                if (tempParticle != null) {
+                    Destroy(tempParticle);
+                }
+                tempParticle = Instantiate(hitParticle, transform.position, Quaternion.identity);
+                tempParticle.Play();
             }
         }
     }
