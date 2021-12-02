@@ -18,6 +18,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public float speed = 4f;
     public float jump = 1.3f;
+    public bool isBuffed = false;
     public float turnSmoothTime = 0.2f;
     private float turnSmoothVelocity;
 

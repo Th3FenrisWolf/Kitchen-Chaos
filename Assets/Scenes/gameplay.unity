@@ -6136,7 +6136,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764030281}
-  m_LocalRotation: {x: -0.0021282216, y: 0.99184036, z: -0.12636939, w: -0.016703859}
+  m_LocalRotation: {x: -0.0021282164, y: 0.99184036, z: -0.1263694, w: -0.01670382}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6180,7 +6180,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9352678, y: 1}
+    m_SensorSize: {x: 1.8089552, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6489,6 +6489,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7362767172860622096, guid: 0a192fa34d09c63438d3c0fd81ddab90, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a192fa34d09c63438d3c0fd81ddab90, type: 3}
 --- !u!4 &805022748 stripped
@@ -6496,6 +6500,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4703866617805634, guid: 0a192fa34d09c63438d3c0fd81ddab90, type: 3}
   m_PrefabInstance: {fileID: 805022747}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &805022749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1634283586154942, guid: 0a192fa34d09c63438d3c0fd81ddab90, type: 3}
+  m_PrefabInstance: {fileID: 805022747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &805022751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805022749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01705d7eac6090446bf2ef22e3584781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &810003661
 GameObject:
   m_ObjectHideFlags: 3
@@ -6859,7 +6880,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9352678, y: 1}
+    m_SensorSize: {x: 1.8089552, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7751,11 +7772,25 @@ CapsuleCollider:
   m_GameObject: {fileID: 1085011507}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 6.8
   m_Height: 32.69
   m_Direction: 2
   m_Center: {x: 0, y: 0.000030517578, z: 9.554887}
+--- !u!64 &1085011509
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085011507}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 7d7c38ffdfcc71640a9821858c5be2cc, type: 3}
 --- !u!1 &1086802421
 GameObject:
   m_ObjectHideFlags: 0
@@ -10044,11 +10079,25 @@ CapsuleCollider:
   m_GameObject: {fileID: 1370211054}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 4.9
   m_Height: 23.8
   m_Direction: 2
   m_Center: {x: 0, y: 0.000015258789, z: 7.0866146}
+--- !u!64 &1370211056
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370211054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: cbe901c534fac324b9a0e1c87356397a, type: 3}
 --- !u!1 &1379112333
 GameObject:
   m_ObjectHideFlags: 0
@@ -10803,6 +10852,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: cbe901c534fac324b9a0e1c87356397a, type: 3}
       propertyPath: m_Name
       value: waste bin_002
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbe901c534fac324b9a0e1c87356397a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cbe901c534fac324b9a0e1c87356397a, type: 3}
       propertyPath: m_NavMeshLayer
@@ -12026,7 +12079,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9352678, y: 1}
+    m_SensorSize: {x: 1.8089552, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -17065,6 +17118,10 @@ PrefabInstance:
       value: waste bin_004
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7d7c38ffdfcc71640a9821858c5be2cc, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7d7c38ffdfcc71640a9821858c5be2cc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -17195,6 +17252,7 @@ MonoBehaviour:
   isEnabled: 1
   speed: 4
   jump: 0.8
+  isBuffed: 0
   turnSmoothTime: 0.2
 --- !u!4 &1925824188
 Transform:
@@ -28847,7 +28905,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9352678, y: 1}
+    m_SensorSize: {x: 1.8089552, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
