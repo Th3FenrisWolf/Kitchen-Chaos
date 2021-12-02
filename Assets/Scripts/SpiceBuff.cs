@@ -8,11 +8,20 @@ public class SpiceBuff : MonoBehaviour
     float buffMultiplier = 1.5f;
     [SerializeField] ParticleSystem spiceEffect = null;
     ThirdPersonMovement playerMovement;
+    public GameObject helpText;
 
     // Start is called before the first frame update
     void Awake()
 	{
         playerMovement = GameObject.Find("Main Character").GetComponent<ThirdPersonMovement>();
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        helpText.SetActive(true);
+    }
+
+    private void OnTriggerExit(Collider other) {
+        helpText.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
@@ -36,8 +45,6 @@ public class SpiceBuff : MonoBehaviour
     {
         if (playerMovement.isBuffed) {
             timer += Time.deltaTime;
-
-
         }
         if (timer >= 10)
 		{
