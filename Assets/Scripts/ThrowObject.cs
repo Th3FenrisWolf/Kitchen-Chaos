@@ -11,6 +11,7 @@ public class ThrowObject : MonoBehaviour
     public float throwForce = 5;
     bool hasPlayer = false;
     bool beingCarried = false;
+    bool beingThrown = false;
     public AudioClip[] soundToPlay;
     private AudioSource audio;
     public bool touched = false;
@@ -35,7 +36,7 @@ public class ThrowObject : MonoBehaviour
             collision.gameObject.GetComponentInParent<navigation>().Stun();
         }
 
-        if (audio != null && gameObject.GetComponent<Rigidbody>().velocity.magnitude >= 0.5f) {
+        if (audio != null && gameObject.GetComponent<Rigidbody>().velocity.magnitude >= 0.5f && beingThrown) {
             Debug.Log(gameObject.name);
             Debug.Log(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
             audio.PlayOneShot(audio.clip);
@@ -78,6 +79,7 @@ public class ThrowObject : MonoBehaviour
                 transform.parent = null;
                 beingCarried = false;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
+                beingThrown = true;
                 // TODO: RandomAudio();
             }
             
