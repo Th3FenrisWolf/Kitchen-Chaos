@@ -13,6 +13,7 @@ public class LightSwitch : MonoBehaviour
 	public AudioClip switchOn;
 	public AudioClip switchOff;
 	private AudioSource audioSource;
+	public GameObject switchObj;
 
     private void OnTriggerEnter(Collider other)
 	{
@@ -37,12 +38,13 @@ public class LightSwitch : MonoBehaviour
 				lightOn = false;
 				audioSource.clip = switchOff;
 				audioSource.Play();
-			}
-			else
+				switchObj.GetComponent<Animator>().SetBool("toggle", true);
+			} else
 			{
 				lightOn = true;
 				audioSource.clip = switchOn;
 				audioSource.Play();
+				switchObj.GetComponent<Animator>().SetBool("toggle", false);
 			}
 
 			// update score
