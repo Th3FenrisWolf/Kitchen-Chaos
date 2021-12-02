@@ -20,12 +20,14 @@ public class navigation : MonoBehaviour
     public GameObject pauseText;
     public GameObject stopwatch;
     bool paused = false;
+    private GameObject instructionsText;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        instructionsText = GameObject.Find("InstructionsText");
     }
 
     IEnumerator HandleDead() {
@@ -90,7 +92,7 @@ public class navigation : MonoBehaviour
             } else if (Input.GetKeyDown(KeyCode.M) && paused) {
                 // go to the main screen
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
-            } else if (Input.GetKeyDown(KeyCode.Escape) && !paused) {
+            } else if (Input.GetKeyDown(KeyCode.Escape) && !paused && !instructionsText.activeSelf) {
                 paused = true;
                 PauseGame();
                 pauseText.SetActive(true);
