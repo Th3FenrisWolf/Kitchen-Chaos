@@ -6,50 +6,52 @@ public class SpiceBuff : MonoBehaviour
 {
     float timer;
     float buffMultiplier = 1.5f;
-    ThirdPersonMovement PlayerMovement;
+    [SerializeField] ParticleSystem spiceEffect = null;
+    ThirdPersonMovement playerMovement;
+
     // Start is called before the first frame update
     void Awake()
 	{
-        PlayerMovement = GameObject.Find("Main Character").GetComponent<ThirdPersonMovement>();
+        playerMovement = GameObject.Find("Main Character").GetComponent<ThirdPersonMovement>();
     }
 
     private void OnTriggerStay(Collider other)
 	{
         if (Input.GetKey("e")){
             timer = 0;
-            Debug.Log("Game object: " + PlayerMovement.isBuffed);
 
-            
-            
-
-            if (!PlayerMovement.isBuffed)
+            if (!playerMovement.isBuffed)
             {
-                PlayerMovement.speed = PlayerMovement.speed * buffMultiplier;
-                PlayerMovement.jump = PlayerMovement.jump * buffMultiplier;
-                PlayerMovement.isBuffed = true;
+                spiceEffect = GameObject.Find("SpicedPlayer").GetComponent<ParticleSystem>();
+                spiceEffect.Play();
+                playerMovement.speed *= buffMultiplier;
+                playerMovement.jump *= buffMultiplier;
+                playerMovement.isBuffed = true;
             }
-            Debug.Log("Game object: " + PlayerMovement.isBuffed);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerMovement.isBuffed) {
+        if (playerMovement.isBuffed) {
             timer += Time.deltaTime;
+
+
         }
         if (timer >= 10)
 		{
             //return the base stats to normal
-            ReturnToBaseStats(PlayerMovement);
-            PlayerMovement.isBuffed = false;
+            ReturnToBaseStats(playerMovement);
+            playerMovement.isBuffed = false;
+            spiceEffect.Stop();
             timer = 0;
-		}
+        }
     }
 
-    void ReturnToBaseStats(ThirdPersonMovement PlayerMovement)
+    void ReturnToBaseStats(ThirdPersonMovement playerMovement)
 	{
-        PlayerMovement.speed = PlayerMovement.speed / buffMultiplier;
-        PlayerMovement.jump = PlayerMovement.jump / buffMultiplier;
+        playerMovement.speed /= buffMultiplier;
+        playerMovement.jump /= buffMultiplier;
 	}
 }
