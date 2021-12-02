@@ -30,7 +30,7 @@ public class navigation : MonoBehaviour
         instructionsText = GameObject.Find("InstructionsText");
     }
 
-    IEnumerator HandleDead() {
+    public IEnumerator HandleDead() {
         yield return new WaitForSeconds(2);
 
         deadText.SetActive(true);
