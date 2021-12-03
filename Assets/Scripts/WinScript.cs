@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class WinScript : MonoBehaviour
 {
     public Text chaosScore;
+    public Text gameTime;
+    public Text userName;
     public Text winText;
+    public ScoreBoardManager scoreboardController = null;
 
     bool won = false;
 
@@ -25,6 +28,10 @@ public class WinScript : MonoBehaviour
             // show win text
             winText.enabled = true;
             winText.transform.parent.GetComponent<Image>().color = new Color(0, 0, 0, 0.8f);
+            if (scoreboardController != null)
+			{
+                scoreboardController.SaveScore(userName.text, chaosScoreValue, gameTime.text);
+            }
         }
     }
 
