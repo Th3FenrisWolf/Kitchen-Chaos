@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 53700050}
   - component: {fileID: 53700049}
   m_Layer: 5
-  m_Name: FourthScore
+  m_Name: Score4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1021,7 +1021,7 @@ GameObject:
   - component: {fileID: 95900378}
   - component: {fileID: 95900377}
   m_Layer: 5
-  m_Name: FourthName
+  m_Name: Name3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1621,7 +1621,7 @@ GameObject:
   - component: {fileID: 145103508}
   - component: {fileID: 145103507}
   m_Layer: 5
-  m_Name: SecondScore
+  m_Name: Score1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3560,7 +3560,7 @@ GameObject:
   - component: {fileID: 334842948}
   - component: {fileID: 334842947}
   m_Layer: 5
-  m_Name: FirstName
+  m_Name: Name0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7255,7 +7255,7 @@ GameObject:
   - component: {fileID: 930834600}
   - component: {fileID: 930834599}
   m_Layer: 5
-  m_Name: FirstScore
+  m_Name: Score0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8340,9 +8340,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1069386019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b2dabbc43f0fe45a27f6baa338baa1, type: 3}
+  m_Script: {fileID: 11500000, guid: 46d04b0c62daa54459466601479c5b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreboardController: {fileID: 1214668065}
 --- !u!1 &1073197306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8355,7 +8356,7 @@ GameObject:
   - component: {fileID: 1073197309}
   - component: {fileID: 1073197308}
   m_Layer: 5
-  m_Name: SecondName
+  m_Name: Name1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9868,7 +9869,7 @@ GameObject:
   - component: {fileID: 1257382060}
   - component: {fileID: 1257382059}
   m_Layer: 5
-  m_Name: FifthScore
+  m_Name: Score5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13350,7 +13351,7 @@ GameObject:
   - component: {fileID: 1806920830}
   - component: {fileID: 1806920829}
   m_Layer: 5
-  m_Name: ThirdScore
+  m_Name: Score3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14058,7 +14059,7 @@ GameObject:
   - component: {fileID: 1864239335}
   - component: {fileID: 1864239334}
   m_Layer: 5
-  m_Name: FifthName
+  m_Name: Name4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15053,7 +15054,7 @@ GameObject:
   - component: {fileID: 2040350899}
   - component: {fileID: 2040350898}
   m_Layer: 5
-  m_Name: ThirdName
+  m_Name: Name2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
