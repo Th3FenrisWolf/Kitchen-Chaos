@@ -12,10 +12,25 @@ public class WinScript : MonoBehaviour
     bool won = false;
 
     private int winThreshold = 500;
+    private void OnTriggerEnter(Collider other)
+    {
+        int chaosScoreValue = int.Parse(chaosScore.text.Split(':')[1]);
+        if (chaosScoreValue >= winThreshold && !won)
+        {
+            Debug.Log("You Won!");
+            won = true;
+
+            // pause game
+            Time.timeScale = 0;
+            // show win text
+            winText.enabled = true;
+            winText.transform.parent.GetComponent<Image>().color = new Color(0, 0, 0, 0.8f);
+        }
+    }
 
     // Update is called once per frame
     void Update() {
-        int chaosScoreValue = int.Parse(chaosScore.text.Split(':')[1]);
+        
 
         if (won) {
             if (Input.GetKey(KeyCode.Return)) {
@@ -32,14 +47,6 @@ public class WinScript : MonoBehaviour
         }
 
 
-        if (chaosScoreValue >= winThreshold && !won) {
-            won = true;
-
-            // pause game
-            Time.timeScale = 0;
-            // show win text
-            winText.enabled = true;
-            winText.transform.parent.GetComponent<Image>().color = new Color(0, 0, 0, 0.8f);
-        }
+        
     }
 }
