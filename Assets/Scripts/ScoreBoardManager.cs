@@ -15,15 +15,19 @@ public class ScoreBoardManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        scoreBoard.scoresList = this.LoadScores();
         if (!Directory.Exists(Application.persistentDataPath + "/HighScores/"))
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/HighScores/");
         }
+        Debug.Log("Scores count" + scoreBoard.scoresList.Count);
     }
 
 
     public void SaveScore(string userName, int chaosScoreValue, string gameTime)
     {
+        
+        Debug.Log("Scores count" + scoreBoard.scoresList.Count);
         if (scoreBoard.scoresList.Count == 0)
         {
             scoreBoard.addScore(userName, chaosScoreValue, gameTime);
