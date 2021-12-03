@@ -28,7 +28,7 @@ public class ScoreBoardManager : MonoBehaviour
         {
             scoreBoard.addScore(userName, chaosScoreValue, gameTime);
         }
-        else if(chaosScoreValue > scoreBoard.scoresList[i].getScore())
+        else if(chaosScoreValue > scoreBoard.scoresList[0].getScore())
         {
             scoreBoard.scoresList[0] = new HighScore(userName, chaosScoreValue, gameTime);
         }
