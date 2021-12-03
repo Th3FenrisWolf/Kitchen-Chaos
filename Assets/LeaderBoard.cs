@@ -8,8 +8,8 @@ public class LeaderBoard : MonoBehaviour
 {
     public ScoreBoardManager scoreboardController = null;
 
-    public TMPro.TextMeshPro userName = null;
-    public TMPro.TextMeshPro userScore = null;
+    public TMPro.TextMeshProUGUI userName = null;
+    public TMPro.TextMeshProUGUI userScore = null;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +17,13 @@ public class LeaderBoard : MonoBehaviour
         if (scoreboardController != null)
         {
             List<HighScore> scoreList = scoreboardController.LoadScores();
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < scoreList.Count; i++)
             {
-                //userName = this.gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
-                //userName = GameObject.Find("Name" + i).GetComponent<Text>();
-                //userScore = GameObject.Find("Score" + i).GetComponent<Text>();
-                //userName = scoreList[i].getName();
+                userName = GameObject.Find("Name" + i).GetComponent<TMPro.TextMeshProUGUI>();
+                userScore = GameObject.Find("Score" + i).GetComponent<TMPro.TextMeshProUGUI>();
+                userName.text = scoreList[i].getName();
+                userScore.text = scoreList[i].getScore().ToString();
+
             }
         }
     }
