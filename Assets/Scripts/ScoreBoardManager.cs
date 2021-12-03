@@ -28,13 +28,36 @@ public class ScoreBoardManager : MonoBehaviour
     {
         
         Debug.Log("Scores count" + scoreBoard.scoresList.Count);
-        if (scoreBoard.scoresList.Count == 0)
-        {
-            scoreBoard.addScore(userName, chaosScoreValue, gameTime);
+        
+        bool foundSpot = false;
+
+        HighScore replacedScore = null;
+        HighScore nextLowerScore;
+        for (int i = 0; i < scoreBoard.scoresList.Count; i++) {
+            if (foundSpot)
+            {
+                nextLowerScore = scoreBoard.scoresList[i];
+                scoreBoard.scoresList[i] = replacedScore;
+                replacedScore = nextLowerScore;
+            }
+            else if (chaosScoreValue > scoreBoard.scoresList[i].getScore())
+			{
+                replacedScore = scoreBoard.scoresList[i];
+                scoreBoard.scoresList[i] = new HighScore(userName, chaosScoreValue, gameTime);
+                foundSpot = true;
+            }
         }
-        else if(chaosScoreValue > scoreBoard.scoresList[0].getScore())
-        {
-            scoreBoard.scoresList[0] = new HighScore(userName, chaosScoreValue, gameTime);
+        if (scoreBoard.scoresList.Count < 5)
+		{
+            if (foundSpot)
+			{
+                scoreBoard.scoresList.Add(replacedScore);
+            }
+			else
+			{
+                scoreBoard.addScore(userName, chaosScoreValue, gameTime);
+            }
+
         }
 
         XmlSerializer serializer = new XmlSerializer(typeof(ScoreBoard));
