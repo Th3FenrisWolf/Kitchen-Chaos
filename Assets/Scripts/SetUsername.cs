@@ -10,10 +10,4 @@ public class SetUsername : MonoBehaviour
     {
         gameObject.GetComponent<Text>().text = System.DateTime.Now.ToString("hhmmss");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
