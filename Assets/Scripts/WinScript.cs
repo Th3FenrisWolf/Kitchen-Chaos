@@ -10,6 +10,7 @@ public class WinScript : MonoBehaviour
     public Text gameTime;
     public Text userName;
     public Text winText;
+    public GameObject GetMoreChaosObj;
     public ScoreBoardManager scoreboardController = null;
 
     bool won = false;
@@ -32,7 +33,13 @@ public class WinScript : MonoBehaviour
 			{
                 scoreboardController.SaveScore(userName.text, chaosScoreValue, gameTime.text);
             }
+        } else {
+            GetMoreChaosObj.SetActive(true);
         }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        GetMoreChaosObj.SetActive(false);
     }
 
     // Update is called once per frame
