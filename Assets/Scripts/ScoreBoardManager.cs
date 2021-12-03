@@ -28,37 +28,11 @@ public class ScoreBoardManager : MonoBehaviour
         {
             scoreBoard.addScore(userName, chaosScoreValue, gameTime);
         }
-		else
-		{
-            bool foundSpot = false;
-            HighScore temp = new HighScore();
-            for (int i = 0; i < scoreBoard.scoresList.Count; i++)
-			{
-                if (foundSpot)
-                {
-                    //insert higher score
-                    scoreBoard.scoresList[i] = temp;
-                    //move lower score
-                    temp = scoreBoard.scoresList[i];
-                }
-                if (chaosScoreValue > scoreBoard.scoresList[i].getScore())
-				{
-                    temp = scoreBoard.scoresList[i];
-                    scoreBoard.scoresList[i] = new HighScore(userName, chaosScoreValue, gameTime);
-				}
-			}
-            if (scoreBoard.scoresList.Count < 5)
-			{
-                if (foundSpot)
-				{
-                    scoreBoard.scoresList.Add(temp);
-				}
-				else
-				{
-                    scoreBoard.addScore(userName, chaosScoreValue, gameTime);
-                }
-			}
-		}
+        else if(chaosScoreValue > scoreBoard.scoresList[i].getScore())
+        {
+            scoreBoard.scoresList[0] = new HighScore(userName, chaosScoreValue, gameTime);
+        }
+
         XmlSerializer serializer = new XmlSerializer(typeof(ScoreBoard));
         FileStream stream = new FileStream(Application.persistentDataPath + "/HighScores/highscores.xml", FileMode.Create);
         Debug.Log("Path: " + Application.persistentDataPath + "/HighScores/highscores.xml");
